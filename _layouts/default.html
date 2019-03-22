@@ -47,9 +47,9 @@ ga('send', 'pageview');
     <div class="container pr-0">    
     
     <!-- Begin Logo -->
-    <a class="navbar-brand" href="{{ site.baseurl }}/">
-    <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
-    </a>
+    <!-- <a class="navbar-brand" href="{{ site.baseurl }}/">
+    <img class="author-thumb" src="https://github.com/{{ site.github_username }}.png?size=40" alt="{{ site.name }}">
+    </a> -->
     <!-- End Logo -->
   
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,15 +80,12 @@ ga('send', 'pageview');
                 </li>
                 
                 <li class="nav-item">
-                <a class="nav-link" href="https://github.com/wowthemesnet/mediumish-theme-jekyll/archive/master.zip"><i class="fas fa-download"></i> Download</a>
+                <a class="nav-link" href="https://github.com/guerrerocarlos"><i class="fab fa-github"></i> Github</a>
                 </li>
                 
+
                 <li class="nav-item">
-                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-wordpress/"><i class="fab fa-wordpress-simple"></i> WP Version</a>
-                </li>
-                
-                <li class="nav-item">
-                <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-ghost/"><i class="fab fa-snapchat-ghost"></i> Ghost Version</a>
+                <a class="nav-link" href="https://twitter.com/guerrerocarlos"><i class="fab fa-twitter"></i> Twitter</a>
                 </li>
                 
                 {% include search-lunr.html %}
@@ -113,8 +110,15 @@ ga('send', 'pageview');
 <!-- Site Title
 ================================================== -->
 <div class="mainheading">
-    <h1 class="sitetitle">{{ site.name }}</h1>
-    <p class="lead">
+    {% if page.url == "/" %}
+    <a href="/">
+    {% else %}
+    <a href="../">
+    {% endif %}
+
+        <h1 class="sitetitle">{{ site.name }}</h1>
+    </a>
+        <p class="lead">
          {{ site.description }}
     </p>
 </div>
